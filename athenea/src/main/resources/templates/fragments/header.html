@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:with="lang=${#locale.language}" th:lang="${lang}">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<th:block th:fragment="header">
+
+    <div id="banner" class="jumbotron jumbotron-fluid">
+
+        <div class="container-fluid">
+            <div class="logo-container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" th:href="@{/}">
+                        <img th:src="@{/img/clinicare_logo.svg}" alt="clinicare logo"/>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="container-fluid">
+
+        </div>
+
+    </div>
+
+</th:block>
+</body>
+</html>

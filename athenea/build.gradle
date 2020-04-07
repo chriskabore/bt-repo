@@ -36,6 +36,12 @@ dependencies {
     compile group: 'org.webjars', name: 'font-awesome', version: '5.13.0'
     compile group: 'org.webjars.npm', name: 'popper.js', version: '1.16.1'
     compile group: 'org.webjars.npm', name: 'animate.css', version: '3.7.2'
+    compile group: 'org.webjars', name: 'jquery-cookie', version: '1.4.1'
+    compile group: 'org.webjars', name: 'chartjs', version: '2.9.3'
+    compile group: 'org.webjars', name: 'material-design-icons', version: '3.0.1'
+
+
+
 
 
 

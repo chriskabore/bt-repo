@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+       layout:decorate="~{fragments/layout}" th:with="lang=${#locale.language}" th:lang="${lang}">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <div layout:fragment="content" th:remove="tag">
+        <h1>Welcome to Athenea </h1>
+        <p>This is an unsecured page, but you can access the secured pages after authenticating.</p>
+        <ul>
+         <li>Go to the <a href="/user/home-page" th:href="@{/user/home-page}">secured pages</a></li>
+        </ul>
+    </div>
+</body>
+</html>

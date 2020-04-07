@@ -14,7 +14,7 @@ spring:
     show-sql: true
 
   thymeleaf:
-    mode: HTML
+    mode: LEGACYHTML5
     cache: false
     check-template: true
     check-template-location: true
@@ -25,6 +25,12 @@ spring:
     prefix: classpath:/templates/
     suffix: .html
 
+    devtools:
+      restart:
+        enabled: true
+        log-condition-evaluation-delta: true
+      livereload:
+        enabled: false
 
 server:
   port: 8898
