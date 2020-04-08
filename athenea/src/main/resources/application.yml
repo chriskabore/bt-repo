@@ -14,7 +14,7 @@ spring:
     show-sql: true
 
   thymeleaf:
-    mode: LEGACYHTML5
+    mode: HTML
     cache: false
     check-template: true
     check-template-location: true

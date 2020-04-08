@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:with="lang=${#locale.language}" th:lang="${lang}">
+    <th:block th:fragment="stylesheets">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{webjars/font-awesome/5.13.0/css/all.min.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{webjars/animate.css/animate.min.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/athenea.css}"/>
+        <link rel="icon" sizes="256x256" th:sizes="256x256" th:href="@{/img/logo-athenea.ico}"/>
+    </th:block>
+
+    <th:block th:fragment="scripts">
+        <script type="text/javascript" th:src="@{/webjars/jquery/3.0.0/jquery.min.js/}"></script>
+        <script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+        <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/athenea.js}"></script>
+    </th:block>
+</html>

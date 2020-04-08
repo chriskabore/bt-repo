@@ -1,71 +1,78 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:th="http://www.thymeleaf.org"
-      layout:decorate="~{fragments/layout}" lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      th:with="lang=${#locale.language}" th:lang="${lang}">
 <head>
-    <meta charset="UTF-8">
     <title>Login</title>
+    <th:block th:insert="fragments/scripts::stylesheets"/>
+
 </head>
 <body>
-<div layout:fragment="content" th:remove="tag">
+    <div class="login-content">
+        <div class="container content-wrapper">
+            <div class="login-logo-container">
+                <img th:src="@{/img/logo-athenea.png}" alt="athenea logo" class="logo-athenea"/>
+            </div>
+            <div class="phrase-container">
+                <p class="phrase" th:text="#{ui.login.phrase.text}">Manage your projects more easily and follow the progress of your action plans in real time.</p>
+            </div>
+            <div class="card login-card ">
+                <div class="card-header">
+                    <p th:text="#{ui.login.signin.text}" class="sign-in-text">Sign in to your account</p>
+                </div>
+                <div class="card-body">
+                    <form th:action="@{/login}" method="post">
+                        <div th:if="${param.error}">
+                            <div class="alert alert-danger">
+                                Invalid username or password.
+                            </div>
+                        </div>
+                        <div th:if="${param.logout}">
+                            <div class="alert alert-info">
+                                You have been logged out.
+                            </div>
+                        </div>
 
-    <div class="card login-card ">
-        <h5 th:text="#{ui.login.form.title}" class="card-header">Login Page</h5>
-        <div class="card-body">
-            <form th:action="@{/login}" method="post">
-                <div th:if="${param.error}">
-                    <div class="alert alert-danger">
-                        Invalid username or password.
-                    </div>
+                        <div class="input-group email-input-group">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input  id="email-address" type="text" name="email" class="form-control input_user" value="" autofocus="autofocus" th:placeholder="#{ui.login.form.placeholder.user_email}">
+                        </div>
+                        <div class="input-group  password-input-group">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" name="password" class="form-control input_pass" value="" placeholder="password" th:placeholder="#{ui.login.form.placeholder.password}">
+                        </div>
+                        <div class="row form-group form-check">
+                            <div class="form-check-container">
+                                <input type="checkbox" class="form-check-input" id="remember-me">
+                                <label for="remember-me" class="form-check-label" th:text="#{ui.login.form.label.remember_me}">Remember me</label>
+                            </div>
+                            <div class="password-forgoten d-flex justify-content-center">
+                                <p><a href="/" th:href="@{/}" th:text="#{ui.login.form.label.password_forgotten}">Password forgotten?</a></p>
+                            </div>
+                        </div>
+                        <div class="form-group login-button-group">
+                            <div class="login-submit-container">
+                                <input type="submit"
+                                       name="login-submit"
+                                       id="login-submit"
+                                       class="form-control  btn btn-primary"
+                                       th:value="#{ui.login.form.button.login}">
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div th:if="${param.logout}">
-                    <div class="alert alert-info">
-                        You have been logged out.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="email-address" th:text="#{ui.login.form.label.user_email}">Email</label>:
+                <div class="card-footer">
 
-                    <input type="text"
-                           id="email-address"
-                           name="email"
-                           class="form-control"
-                           autofocus="autofocus"
-                           th:placeholder="#{ui.login.form.placeholder.user_email}">
-                    <small id="email-help" class="form-text text-muted" th:text="#{ui.login.form.help.user_email}"></small>
                 </div>
-                <div class="form-group">
-                    <label for="password" th:text="#{ui.login.form.label.password}">Password</label>:
-                    <input type="password"
-                           id="password"
-                           name="password"
-                           class="form-control"
-                           th:placeholder="#{ui.login.form.placeholder.password}">
-                </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="remember-me">
-                    <label for="remember-me" class="form-check-label" th:text="#{ui.login.form.label.remember_me}">Remember me</label>
-                </div>
-                <div class="form-group">
-
-                    <div class="login-submit-container">
-                        <input type="submit"
-                               name="login-submit"
-                               id="login-submit"
-                               class="form-control  btn btn-primary"
-                               th:value="#{ui.login.form.button.login}">
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
+
     </div>
-    <div class="password-forgoten">
-        <p><a href="/" th:href="@{/}" th:text="#{ui.login.form.label.password_forgotten}">Password forgotten?</a></p>
-    </div>
-
-
-
-
-</div>
+    <hr class="footer-separator">
+ <th:block th:insert="fragments/footer::footer"/>
+ <th:block th:insert="fragments/scripts::scripts"/>
 </body>
 </html>

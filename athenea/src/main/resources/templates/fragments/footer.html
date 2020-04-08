@@ -2,16 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org" th:with="lang=${#locale.language}" th:lang="${lang}">
 <body>
         <th:block th:fragment="footer">
-
-         <footer>
+            <footer>
 
                 <div class="copyright-container">
-                    <p class="copyright" th:text="'&copy; '+'2018'+'  BEOGOTECH SARL'">
-                </p>
-        </div>
+                    <p class="copyright" th:text="'&copy; '+${year}+'&nbsp;'+#{ui.footer.copyright.text}"></p>
+                </div>
 
-    </footer>
+            </footer>
 
-</th:block>
+        </th:block>
+
+
+
 </body>
 </html>

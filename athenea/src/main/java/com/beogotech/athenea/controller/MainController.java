@@ -14,7 +14,13 @@ public class MainController {
 
 	@GetMapping(value = AtheneaUtil.APP_ROOT_URI)
 	public String showIndexPage(Model model){
+		model.addAttribute("year", AtheneaUtil.COPYRIGHT_YEAR_INT);
 		return AtheneaUtil.INDEX_PAGE_URI;
 	}
-
+	
+	@GetMapping(value = AtheneaUtil.LOGIN_PAGE_URI)
+	public String showLoginPage(Model model){
+		model.addAttribute("year", AtheneaUtil.COPYRIGHT_YEAR_INT);
+		return AtheneaUtil.LOGIN_PAGE_URI;
+	}
 }
