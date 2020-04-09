@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+       th:with="lang=${#locale.language}" th:lang="${lang}">
+<head>
+    <title>Dashboard</title>
+    <th:block th:insert="fragments/scripts::stylesheets"/>
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <th:block th:insert="fragments/header::dashboard-aside"/>
+
+    </div>
+    <hr class="footer-separator">
+    <th:block th:insert="fragments/footer::footer"/>
+    <th:block th:insert="fragments/scripts::scripts"/>
+
+</body>
+</html>
