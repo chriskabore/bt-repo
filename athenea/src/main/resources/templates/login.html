@@ -2,19 +2,21 @@
 <html xmlns:th="http://www.thymeleaf.org"
       th:with="lang=${#locale.language}" th:lang="${lang}">
 <head>
-    <title>Login</title>
-    <th:block th:insert="fragments/scripts::stylesheets"/>
-
+    <th:block th:insert="fragments/general::stylesheets"/>
+    <title th:text="#{ui.page.login.title}"></title>
 </head>
 <body>
-    <div class="login-content">
-        <div class="container content-wrapper">
+    <main role="main" class="login-content">
+        <div class="container-fluid content-wrapper">
+            <!-- Logo container-->
             <div class="login-logo-container">
                 <img th:src="@{/img/logo-athenea.png}" alt="athenea logo" class="logo-athenea"/>
             </div>
+            <!-- Phrase container -->
             <div class="phrase-container">
                 <p class="phrase" th:text="#{ui.login.phrase.text}">Manage your projects more easily and follow the progress of your action plans in real time.</p>
             </div>
+            <!-- login card -->
             <div class="card login-card ">
                 <div class="card-header">
                     <p th:text="#{ui.login.signin.text}" class="sign-in-text">Sign in to your account</p>
@@ -34,23 +36,23 @@
 
                         <div class="input-group email-input-group">
                             <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <span class="input-group-text"><i class="fas fa-user fa-lg"></i></span>
                             </div>
                             <input  id="email-address" type="text" name="email" class="form-control input_user" value="" autofocus="autofocus" th:placeholder="#{ui.login.form.placeholder.user_email}">
                         </div>
                         <div class="input-group  password-input-group">
                             <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                <span class="input-group-text"><i class="fas fa-key fa-lg"></i></span>
                             </div>
                             <input type="password" name="password" class="form-control input_pass" value="" placeholder="password" th:placeholder="#{ui.login.form.placeholder.password}">
                         </div>
-                        <div class="row form-group form-check">
-                            <div class="form-check-container">
+                        <div class="row form-group form-check center-elements-vertical">
+                            <div class="form-check-container col-md-4">
                                 <input type="checkbox" class="form-check-input" id="remember-me">
                                 <label for="remember-me" class="form-check-label" th:text="#{ui.login.form.label.remember_me}">Remember me</label>
                                 <span></span>
                             </div>
-                            <div class="password-forgoten d-flex justify-content-center">
+                            <div class="password-forgoten d-flex offset-md-4 col-md-4">
                                 <a href="/" th:href="@{/}" th:text="#{ui.login.form.label.password_forgotten}">Password forgotten?</a>
                             </div>
                         </div>
@@ -70,10 +72,8 @@
                 </div>
             </div>
         </div>
-
-    </div>
-    <hr class="footer-separator">
- <th:block th:insert="fragments/footer::footer"/>
- <th:block th:insert="fragments/scripts::scripts"/>
+    </main>
+    <th:block th:insert="fragments/general::footer"/>
+    <th:block th:insert="fragments/general::scripts"/>
 </body>
 </html>

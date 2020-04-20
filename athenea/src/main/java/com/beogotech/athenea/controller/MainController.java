@@ -28,6 +28,7 @@ public class MainController {
 	@PostMapping(value = "/login")
 	public String logUserIn(Model model){
 		model.addAttribute("year", AtheneaUtil.COPYRIGHT_YEAR_INT);
+		model.addAttribute("page-title", AtheneaUtil.COPYRIGHT_YEAR_INT);
 		return "redirect:dashboard";
 	}
 	

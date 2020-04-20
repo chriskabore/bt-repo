@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org"
-       th:with="lang=${#locale.language}" th:lang="${lang}">
+<html xmlns:th="http://www.thymeleaf.org"
+      th:with="lang=${#locale.language}" th:lang="${lang}">
 <head>
-    <title>Dashboard</title>
-    <th:block th:insert="fragments/scripts::stylesheets"/>
+    <th:block th:insert="fragments/general::stylesheets"/>
+    <title th:text="#{ui.page.dashboard.title}">Dashboard</title>
 </head>
 <body>
-    <div class="dashboard-wrapper">
-        <th:block th:insert="fragments/header::dashboard-aside"/>
 
-    </div>
-    <hr class="footer-separator">
-    <th:block th:insert="fragments/footer::footer"/>
-    <th:block th:insert="fragments/scripts::scripts"/>
+    <th:block th:insert="fragments/general::side-menu"/>
+    <main role="main" class="page">
 
+        <th:block th:insert="fragments/general::footer"/>
+    </main>
+    <th:block th:insert="fragments/general::scripts"/>
 </body>
 </html>

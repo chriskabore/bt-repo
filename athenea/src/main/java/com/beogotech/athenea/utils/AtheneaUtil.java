@@ -8,6 +8,7 @@ import java.util.Calendar;
  */
 public class AtheneaUtil {
 	
+	
 	/** Date and calendar utility information */
 	public static int COPYRIGHT_YEAR_INT= Calendar.getInstance().get(Calendar.YEAR);
 	
