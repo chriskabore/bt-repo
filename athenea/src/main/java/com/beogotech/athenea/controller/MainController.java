@@ -16,6 +16,8 @@ public class MainController {
 	@GetMapping(value = "/dashboard")
 	public String showIndexPage(Model model){
 		model.addAttribute("year", AtheneaUtil.COPYRIGHT_YEAR_INT);
+		model.addAttribute("numberOfNotifications", "3");
+		model.addAttribute("numberOfMessages", "2");
 		return "/dashboard";
 	}
 	
