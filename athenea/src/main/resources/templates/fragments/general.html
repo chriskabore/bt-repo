@@ -18,7 +18,78 @@
 <body>
 <!-- Side menu -->
 <th:block th:fragment="side-menu">
-    <nav class="side-bar side-menu">
+    <nav id="side-menu" class="sidebar navbar-expand-lg">
+        <div class="sidebar-header">
+            <div class="brand">
+                <img th:src="@{/img/logo-athenea.png}" alt="athenea logo" class="aside-logo-image"/>
+            </div>
+        </div>
+        <div class="menu-list">
+            <ul id="menu-content" class="menu-content">
+                <li class="first-list-item nav-item active">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-analytics fa-fw fa-lg"></i>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.dashboard}" >Dashbaord</span>
+                    </a>
+                </li>
+                <li  data-toggle="collapse" data-target="#activities" class="collapsed nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-tasks fa-fw fa-lg"></i>
+                        <span class="menu-text activities" th:text="#{ui.dashboard.menu.item.text.activities}" >Activities</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li data-toggle="collapse" data-target="#budgets" class="collapsed nav-item">
+                    <a href="# " class="nav-link">
+                        <i class="fas fa-money-bill-alt fa-fw fa-lg"></i>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.budgets}" >Budgets</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li data-toggle="collapse" data-target="#orders" class="collapsed nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-receipt  fa-fw fa-lg"></i>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.orders}" >Orders</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li data-toggle="collapse" data-target="#stakeholders" class="collapsed nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-hands-helping fa-fw fa-lg"></i>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.stakeholders}" >Stakeholders</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li data-toggle="collapse" data-target="#indicators" class="collapsed nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-tachometer-alt fa-fw fa-lg"></i>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.indicators}" >Indicators</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-bell fa-fw fa-lg"></i>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.notifications}" >Notifications</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-question-circle fa-fw fa-lg"></i>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.help}" >Help</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa fa-cog fa-fw fa-lg"></i>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.settings}" >Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--
+    <nav class="side-bar side-menu" id="side-menu">
         <div class="sidebar-wrapper">
             <div class="nav-side-menu">
                 <div class="brand">
@@ -134,12 +205,33 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </nav>-->
+
 </th:block>
 
 <!-- Dashboard header -->
 <th:block th:fragment="dashboard-header">
-    <header class="dashboard-header">
+    <header>
+        <!-- ======================== Navigation ================================= -->
+        <nav class="nav navbar navbar-expand-lg">
+            <div class="container-fluid px-4">
+                <!-- ====================== Panel Title =============================== -->
+                <div class="navbar-wrapper">
+                    <a href="#" class="navbar-brand">
+                        <strong class="panel-title" th:text="#{ui.page.dashboard.title}">Dashboard</strong>
+                    </a>
+                </div>
+                <!-- ========================= End Panel Title =========================== -->
+                <!-- =========================== Navbar toggle button===================== -->
+                <a id="toggle-btn" href="#" class="menu-btn d-xl-none d-lg-none d-md-none" data-toggle="collapse" data-target="#side-menu">
+                    <i class="fa fa-bars fa-lg"></i>
+                </a>
+                <!-- =========================== End Navbar toggle button================= -->
+            </div>
+        </nav>
+        <!-- ====================== End Navigation =================================== -->
+    </header>
+    <!--<header class="dashboard-header">
         <nav class="navbar">
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
@@ -155,12 +247,12 @@
                     </div>
                 </div>
                 <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                    <!-- Notifications block -->
+                    <-- Notifications block --
                     <li class="nav-item dropdown">
                         <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                             <i class="fa fa-bell fa-lg"></i>
-                            <!--/*@thymesVar id="notifications" type=""*/-->
+                            <--/*@thymesVar id="notifications" type=""*/--
                             <span class="badge badge-warning" th:text="${numberOfNotifications}">0</span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="notifications">
@@ -195,7 +287,7 @@
 
                         </ul>
                     </li>
-                    <!-- Messages block -->
+                    <-- Messages block --
                     <li class="nav-item dropdown">
                         <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
                             <i class="fa fa-envelope"></i>
@@ -229,7 +321,7 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- Language selector block -->
+                    <-- Language selector block --
                     <li class="nav-item dropdown">
                         <a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle">
                             <img src="img/flags/GB.png" alt="English">
@@ -244,7 +336,7 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- Logout section -->
+                    <-- Logout section --
                     <li class="nav-item">
                         <a href="#" class="nav-link logout">
                             <span class="d-none d-sm-inline-block" th:text="#{ui.page.dashboar.header.nav.logout.text}">Logout</span>
@@ -254,7 +346,7 @@
                 </ul>
             </div>
         </nav>
-    </header>
+    </header>-->
 </th:block>
 <!-- Footer -->
 <th:block th:fragment="footer">

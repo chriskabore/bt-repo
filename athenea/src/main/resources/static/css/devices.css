@@ -22,6 +22,48 @@
         padding-left: 0px;
     }
 
+    .sidebar{
+        position: fixed;
+        display: block;
+        top: 0;
+        height: 100vh;
+        width: 16.25rem;
+        right: 0;
+        left: auto;
+        z-index: 1032;
+        visibility: visible;
+        overflow-y: visible;
+        border-top: none;
+        text-align: left;
+        padding-right: 0;
+        padding-left: 0;
+        transform: translate3d(260px,0,0);
+        transition: all .33s cubic-bezier(.685,.0473,.346,1);
+    }
+
+    .menu-list{
+        position: relative;
+        overflow: auto;
+        z-index: 4;
+    }
+
+    .collapse.show{
+        transform: translateZ(0px);
+        margin-top: 3.8rem;
+        border-right: none;
+        height: calc(100vh - 65.59px);
+    }
+
+    .sidebar-header{
+        display: none;
+
+    }
+    .main-panel{
+        width:100%;
+    }
+    #toggle-btn{
+        color:#fff;
+    }
 }
 
 /* Small devices (landscape phones, 576px and up)*/
@@ -42,6 +84,46 @@
     .password-forgoten  a{
         padding-left: 0px;
     }
+    .sidebar{
+        position: fixed;
+        display: block;
+        top: 0;
+        height: 100vh;
+        width: 16.25rem;
+        right: 0;
+        left: auto;
+        z-index: 1032;
+        visibility: visible;
+        overflow-y: visible;
+        border-top: none;
+        text-align: left;
+        padding-right: 0;
+        padding-left: 0;
+        transform: translate3d(260px,0,0);
+        transition: all .33s cubic-bezier(.685,.0473,.346,1);
+    }
+
+    .collapse.show{
+        transform: translateZ(0px);
+        margin-top: 3.8rem;
+        border-right: none;
+        height: calc(100vh - 65.59px);
+    }
+    .menu-list{
+        position: relative;
+        overflow: auto;
+        z-index: 4;
+    }
+    .sidebar-header{
+        display: none;
+    }
+    .main-panel{
+        width:100%;
+    }
+
+    #toggle-btn{
+        color:#fff;
+    }
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -55,6 +137,9 @@
 
     .password-forgoten  a{
         padding-left: 3.5rem;
+    }
+    .sidebar{
+        display: block!important;
     }
 }
 
@@ -75,6 +160,14 @@
     .password-forgoten  a{
         padding-left: 5rem;
     }
+
+    .navbar-expand-lg{
+
+    }
+
+    .sidebar{
+        display: block!important;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
@@ -88,5 +181,9 @@
     }
     .login-card, .content-wrapper{
         width: 50rem;
+    }
+
+    .sidebar{
+        display: block!important;
     }
 }

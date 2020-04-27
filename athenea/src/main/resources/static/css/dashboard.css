@@ -1,15 +1,22 @@
 
-.side-bar{
+.dashboard-wrapper{
+    position: relative;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebar{
     position: fixed;
-    top:0;
+    top: 0;
+    bottom: 0;
     left: 0;
+    z-index: 2;
     height: 100vh;
     background: #43425D;
     font-weight: 300;
     width: 12.5rem;
     color: white;
     text-align: left;
-    z-index: 999;
     overflow-y: auto;
     border-right: 2px solid #ffffff;
 }
@@ -18,7 +25,7 @@
     height:100vh;
 }
 
-.nav-side-menu{
+.menu-list{
     height:100vh;
     overflow: auto;
     font-size: 0.875rem;
@@ -26,8 +33,8 @@
 
 
 
-.nav-side-menu ul,
-.nav-side-menu li {
+.menu-list ul,
+.menu-list li {
     list-style: none;
     padding: 0px;
     margin: 0px;
@@ -35,11 +42,11 @@
     cursor: pointer;
 }
 
-.nav-side-menu .first-list-item{
+.menu-list .first-list-item{
     border-top: 1px solid #23282e;
 }
-.nav-side-menu ul :not(collapsed) .arrow:before,
-.nav-side-menu li :not(collapsed) .arrow:before {
+.menu-list ul :not(collapsed) .arrow:before,
+.menu-list li :not(collapsed) .arrow:before {
     font-family: 'Font Awesome 5 Free';
     content: "\f13a";
     display: inline-block;
@@ -49,33 +56,33 @@
     float: right;
     font-weight: 900;
 }
-.nav-side-menu ul .active,
-.nav-side-menu li .active {
+.menu-list ul .active,
+.menu-list li .active {
     border-left: 3px solid #9160A6;
     background-color: #4f5b69;
 }
-.nav-side-menu ul .sub-menu li.active,
-.nav-side-menu li .sub-menu li.active {
+.menu-list ul .sub-menu li.active,
+.menu-list li .sub-menu li.active {
     color: #9160A6;
 }
-.nav-side-menu ul .sub-menu li.active a,
-.nav-side-menu li .sub-menu li.active a {
+.menu-list ul .sub-menu li.active a,
+.menu-list li .sub-menu li.active a {
     color: #9160A6;
 }
-.nav-side-menu ul .sub-menu li,
-.nav-side-menu li .sub-menu li {
+.menu-list ul .sub-menu li,
+.menu-list li .sub-menu li {
     background-color: #181c20;
     border: none;
     line-height: 28px;
     border-bottom: 1px solid #23282e;
     margin-left: 0px;
 }
-.nav-side-menu ul .sub-menu li:hover,
-.nav-side-menu li .sub-menu li:hover {
+.menu-list ul .sub-menu li:hover,
+.menu-list li .sub-menu li:hover {
     background-color: #020203;
 }
-.nav-side-menu ul .sub-menu li:before,
-.nav-side-menu li .sub-menu li:before {
+.menu-list ul .sub-menu li:before,
+.menu-list li .sub-menu li:before {
     font-family: 'Font Awesome 5 Free';
     content: "\f105";
     display: inline-block;
@@ -84,21 +91,21 @@
     vertical-align: middle;
     font-weight: 900;
 }
-.nav-side-menu li {
+.menu-list li {
     padding-left: 0px;
     border-left: 3px solid #84a3c6;
     border-bottom: 1px solid #23282e;
 }
-.nav-side-menu li a {
+.menu-list li a {
     text-decoration: none;
     color: #e1ffff;
 }
-.nav-side-menu li a i {
+.menu-list li a i {
     padding-left: 10px;
     width: 20px;
     padding-right: 20px;
 }
-.nav-side-menu li:hover {
+.menu-list li:hover {
     border-left: 3px solid #9160A6;
     background-color: #4f5b69;
     -webkit-transition: all 1s ease;
@@ -109,23 +116,20 @@
 }
 
 
-.page{
-    position: absolute;
-    top: 0;
-    right:0;
-    min-height: 100vh;
+.main-panel{
+    float: right;
     width: calc(100% - 12.5rem);
     background-color: #f4f7fa;
-    height:100vh;
+    height:100%;
 }
 
-.nav-side-menu .brand{
+.sidebar-header .brand{
     text-align: center;
     height: 5.099375rem;
     border-bottom: solid 2px #9160A6;
 }
 
-.nav-side-menu .aside-logo-image{
+.sidebar-header .aside-logo-image{
     width:10rem;
     border-radius: 6px;
     margin-top:0px;
@@ -134,10 +138,12 @@
 nav.navbar{
     background: #43425D;
     padding: 0.8rem 0;
+    height: 5.099375rem;
 }
 
 .panel-title{
     color:#fff;
+    font-weight: 300;
 }
 
 .nav-header .menu-btn{
@@ -227,10 +233,13 @@ nav.navbar{
 /*---------------------
  Sidebar
  ---------------------*/
-.nav-side-menu .menu-list{
+.menu-list{
+    position: relative;
     padding: 0.2rem 0.1rem;
     font-size: 0.9rem;
     font-weight:300;
+    z-index: 4;
+
 }
 
 .menu-content li a{
@@ -243,4 +252,13 @@ nav.navbar{
 
 .menu-content li a .svg-inline--fa{
  margin-right: 10px;
+}
+
+header{
+    height: 5.099375rem;
+}
+
+.content{
+    height: 100%;
+    background-color: #f4f7fa;
 }
