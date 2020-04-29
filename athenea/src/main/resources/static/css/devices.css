@@ -64,6 +64,16 @@
     #toggle-btn{
         color:#fff;
     }
+    .navbar-header{
+        display: none;
+    }
+
+    .action-plan-selector{
+        border: 1px solid #ceeeef;
+        background: #fff;
+        width: 100%;
+    }
+
 }
 
 /* Small devices (landscape phones, 576px and up)*/
@@ -124,6 +134,16 @@
     #toggle-btn{
         color:#fff;
     }
+
+    .navbar-header{
+        display: none;
+    }
+
+    .action-plan-selector{
+        border: 1px solid #ceeeef;
+        background: #fff;
+        width: 100%;
+    }
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -141,6 +161,22 @@
     .sidebar{
         display: block!important;
     }
+    footer .copyright{
+        font-size: 0.55rem;
+    }
+    #toggle-btn{
+        color:#fff;
+    }
+    .action-plan-selector{
+        border: 1px solid #ceeeef;
+        background: #fff;
+        width: 100%;
+    }
+
+    .selector-label {
+        font-size: 1.05rem;
+    }
+
 }
 
 /* Large devices (desktops, 992px and up)*/
@@ -168,6 +204,16 @@
     .sidebar{
         display: block!important;
     }
+
+    .action-plan-selector{
+        border: 1px solid #ceeeef;
+        background: #fff;
+        width: 100%;
+    }
+
+    .selector-label {
+        font-size: 1.05rem;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
@@ -185,5 +231,11 @@
 
     .sidebar{
         display: block!important;
+    }
+
+    .action-plan-selector{
+        border: 1px solid #ceeeef;
+        background: #fff;
+        width: 100%;
     }
 }

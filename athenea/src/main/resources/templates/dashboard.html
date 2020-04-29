@@ -24,18 +24,61 @@
             <!-- ============================================================== -->
             <!--                       Header                                   -->
             <!-- ============================================================== -->
-
+            <th:block th:insert="fragments/general::dashboard-header"/>
             <!-- ============================================================== -->
             <!--                       End Header                               -->
+            <!-- ============================================================== -->
+
+            <!-- ============================================================== -->
+            <!--                       Action plan selector                     -->
+            <!-- ============================================================== -->
+            <div class="action-plan-selector-wrapper">
+                <div class="container-fluid">
+                    <div class="action-plan-selector-holder">
+                        <div class="row selector-row">
+                            <label class="selector-label col-sm-4 " th:text="#{ui.dashboard.content.selector.label.text}">Choose an action plan</label>
+                            <div class="col-sm-8 mb-3">
+                                <select name="action-plan-selector" class="action-plan-selector">
+                                    <option th:text="${actionPlanActiveOption}"></option>
+                                    <option>option 2</option>
+                                    <option>option 3</option>
+                                    <option>option 4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!--                       End Action plan selector                 -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!--                       Content                                  -->
             <!-- ============================================================== -->
-            <div class="content">
+            <section class="action-plan-panel">
                 <div class="container-fluid">
+                    <div class="row d-flex">
+                       <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                           <div class="card action-plan-tree-holder mt-3 mb-2 pl-2 pr-2 pt-2 pb-2">
+                               <div id="action-plan-tree"></div>
+                           </div>
+                       </div>
+                        <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card action-plan-synthesis-holder mt-3 mb-2 px-2 py-2">
+                                <h5 class="action-plan-synthesis-text" th:text="#{ui.dashboard.content.action.plan.synthesis.text}">Synthesis</h5>
+                                <div class="container-fluid">
+                                    <div class="row d-flex">
 
+                                    </div>
+                                    <div class="row d-flex">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
             <!-- ============================================================== -->
             <!--                       End Content                              -->
             <!-- ============================================================== -->
@@ -54,6 +97,67 @@
     <!-- ============================================================== -->
     <!--                       End dashbaord Wrapper                    -->
     <!-- ============================================================== -->
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var actionPlanActiveOption = [[${actionPlanActiveOption}]];
+        var actionPlanComponents = [[${actionPlanComponents}]];
+        var tree = [
+            {
+                name: ''+actionPlanActiveOption,
+                children: [
+                    {
+                        name: ''+ actionPlanComponents[0],
+                        children:[
+                            {
+                                name: 'subdnode 1'
+
+                            },
+                            {
+                                name:'subnode 2'
+                            },
+                            {
+                                name: 'subnode 3'
+                            }
+                        ]
+                    },
+                    {
+                        name: ''+ actionPlanComponents[1],
+                        children:[
+                            {
+                                name: 'subdnode 1'
+
+                            },
+                            {
+                                name:'subnode 2'
+                            },
+                            {
+                                name: 'subnode 3'
+                            }
+                        ]
+                    },
+                    {
+                        name: ''+ actionPlanComponents[2],
+                        children:[
+                            {
+                                name: 'subdnode 1'
+
+                            },
+                            {
+                                name:'subnode 2'
+                            },
+                            {
+                                name: 'subnode 3'
+                            }
+                        ]
+                    }
+
+                ]
+            }
+
+        ];
+        /*]]>*/
+    </script>
     <th:block th:insert="fragments/general::scripts"/>
 </body>
 </html>

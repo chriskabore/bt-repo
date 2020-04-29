@@ -178,13 +178,13 @@ nav.navbar{
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-#messages.nav-link .fa-envelope{
+#messages-notifications.nav-link .fa-envelope{
     color:white;
     font-size: 0.8rem;
     display: inline-block;
 }
 
-#messages.nav-link .badge{
+#messages-notifications.nav-link .badge{
     font-weight: 400;
     border-radius: 0;
     position: absolute;
@@ -224,6 +224,28 @@ nav.navbar{
 .dropdown-menu .dropdown-item{
     color: #666;
     padding: 10px;
+
+}
+
+.dropdown-menu .dropdown-item.all-notifications{
+    font-size: 0.9rem;
+    font-weight: 200;
+}
+
+.msg-body .h5{
+    font-size: 1rem;
+}
+
+.msg-body span{
+    font-size: 0.85rem;
+    color:#777;
+    font-weight: 300;
+    display: block;
+}
+.msg-body small{
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: #999;
 }
 
 .msg-profile{
@@ -261,4 +283,110 @@ header{
 .content{
     height: 100%;
     background-color: #f4f7fa;
+}
+
+.action-plan-panel{
+    background-color: #f4f7fa;
+}
+
+.action-plan-selector-wrapper{
+    background: #ffffff;
+}
+
+.action-plan-selector-holder .action-plan-selector-holder{
+    padding: 15px 0;
+    font-size: 0.85em;
+    font-weight: 300;
+    color: #999;
+    margin-bottom: 0;
+}
+
+.selector-row{
+    padding-top: 0.75rem;
+    align-items: center;
+}
+.selector-label{
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.action-plan-selector{
+    width: 60%;
+    height: 2rem;
+    padding: .45rem .75rem;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.card.action-plan-synthesis-holder,
+.card.action-plan-tree-holder{
+    height:25rem;
+}
+
+h5.action-plan-synthesis-text{
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #a9afbbd1;
+}
+#action-plan-tree {
+    overflow: auto;
+    font-size: 0.85rem;
+    font-weight: 300;
+}
+.action-plan-tree li {
+    list-style: none;
+}
+
+ul.jqtree_common, ul.jqtree_common ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.jqtree_common ul{
+    padding-left: 10px;
+}
+
+ul.jqtree_common li {
+    margin: 0;
+    padding: 0 7px;
+    line-height: 2.5rem;
+    border-left:1px solid rgb(100,100,100);
+}
+
+ul.jqtree_common li:last-child {
+    border-left:none;
+}
+
+ul.jqtree_common li:before {
+    position:relative;
+    top:0;
+    height:1em;
+    width:1.2rem;
+    color:white;
+    border-bottom:1px solid rgb(100,100,100);
+    content:"";
+    display:inline-block;
+    left:-7px;
+}
+.jqtree-element.jqtree_common {
+    top: -1.1rem;
+}
+
+.jqtree_common.jqtree-folder > .jqtree-element.jqtree_common {
+    top: 0;
+}
+
+.jqtree_common.jqtree-folder:before{
+    display: none;
+}
+
+ul.jqtree_common li:last-child:before {
+    border-left:1px solid rgb(100,100,100);
+}
+
+ul.jqtree-tree .jqtree-toggler {
+    margin-right: 1.25em;
 }
