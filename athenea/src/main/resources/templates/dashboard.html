@@ -6,158 +6,114 @@
     <title th:text="#{ui.page.dashboard.title}">Dashboard</title>
 </head>
 <body>
-<!-- ============================================================== -->
-<!--                       dashbaord Wrapper                        -->
-<!-- ============================================================== -->
-    <div class="dashboard-wrapper">
-        <!-- ============================================================== -->
-        <!--                       Sidebar                                  -->
-        <!-- ============================================================== -->
-         <th:block th:insert="fragments/general::side-menu"/>
-        <!-- ============================================================== -->
-        <!--                       End Sidebar                              -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!--                       Main panel                               -->
-        <!-- ============================================================== -->
-        <div class="main-panel">
-            <!-- ============================================================== -->
-            <!--                       Header                                   -->
-            <!-- ============================================================== -->
-            <th:block th:insert="fragments/general::dashboard-header"/>
-            <!-- ============================================================== -->
-            <!--                       End Header                               -->
-            <!-- ============================================================== -->
+    <div class="container-fluid wrapper">
+       <th:block th:insert="fragments/general::dashboard-header"/>
+        <div class="page row">
+            <aside class="navbar navbar-expand-md">
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav nav flex-column">
+                        <li class="first-list-item nav-item active">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-analytics fa-fw fa-lg"></i>
+                                <span class="menu-text">Dashbaord</span>
+                            </a>
+                        </li>
 
-            <!-- ============================================================== -->
-            <!--                       Action plan selector                     -->
-            <!-- ============================================================== -->
-            <div class="action-plan-selector-wrapper">
-                <div class="container-fluid">
-                    <div class="action-plan-selector-holder">
-                        <div class="row selector-row">
-                            <label class="selector-label col-sm-4 " th:text="#{ui.dashboard.content.selector.label.text}">Choose an action plan</label>
-                            <div class="col-sm-8 mb-3">
-                                <select name="action-plan-selector" class="action-plan-selector">
-                                    <option th:text="${actionPlanActiveOption}"></option>
-                                    <option>option 2</option>
-                                    <option>option 3</option>
-                                    <option>option 4</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+                        <li  data-toggle="collapse" data-target="#activities" class="collapsed nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-tasks fa-fw fa-lg"></i>
+                                <span class="menu-text activities">Activities</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <ul class="sub-menu collapse" id="activities">
+                            <li class="active"><a href="#">CSS3 Animation</a></li>
+                            <li><a href="#">General</a></li>
+                            <li><a href="#">Buttons</a></li>
+                            <li><a href="#">Tabs & Accordions</a></li>
+                        </ul>
+
+
+                        <li data-toggle="collapse" data-target="#budgets" class="collapsed nav-item">
+                            <a href="# " class="nav-link">
+                                <i class="fas fa-money-bill-alt fa-fw fa-lg"></i>
+                                <span class="menu-text">Budgets</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <ul class="sub-menu collapse" id="budgets">
+                            <li>New Service 1</li>
+                            <li>New Service 2</li>
+                            <li>New Service 3</li>
+                        </ul>
+
+
+                        <li data-toggle="collapse" data-target="#orders" class="collapsed nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-receipt  fa-fw fa-lg"></i>
+                                <span class="menu-text">Orders</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <ul class="sub-menu collapse" id="orders">
+                            <li>New New 1</li>
+                            <li>New New 2</li>
+                            <li>New New 3</li>
+                        </ul>
+
+
+                        <li data-toggle="collapse" data-target="#stakeholders" class="collapsed nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-hands-helping fa-fw fa-lg"></i>
+                                <span class="menu-text">Stakeholders</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <ul class="sub-menu collapse" id="stakeholders">
+                            <li>New New 1</li>
+                            <li>New New 2</li>
+                            <li>New New 3</li>
+                        </ul>
+
+                        <li data-toggle="collapse" data-target="#indicators" class="collapsed nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-tachometer-alt fa-fw fa-lg"></i>
+                                <span class="menu-text">Indicators</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <ul class="sub-menu collapse" id="indicators">
+                            <li>New New 1</li>
+                            <li>New New 2</li>
+                            <li>New New 3</li>
+                        </ul>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-bell fa-fw fa-lg"></i>
+                                <span class="menu-text">Notifications</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-question-circle fa-fw fa-lg"></i>
+                                <span class="menu-text">Help</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-cog fa-fw fa-lg"></i>
+                                <span class="menu-text">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            <!-- ============================================================== -->
-            <!--                       End Action plan selector                 -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!--                       Content                                  -->
-            <!-- ============================================================== -->
-            <section class="action-plan-panel">
-                <div class="container-fluid">
-                    <div class="row d-flex">
-                       <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
-                           <div class="card action-plan-tree-holder mt-3 mb-2 pl-2 pr-2 pt-2 pb-2">
-                               <div id="action-plan-tree"></div>
-                           </div>
-                       </div>
-                        <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
-                            <div class="card action-plan-synthesis-holder mt-3 mb-2 px-2 py-2">
-                                <h5 class="action-plan-synthesis-text" th:text="#{ui.dashboard.content.action.plan.synthesis.text}">Synthesis</h5>
-                                <div class="container-fluid">
-                                    <div class="row d-flex">
-
-                                    </div>
-                                    <div class="row d-flex">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- ============================================================== -->
-            <!--                       End Content                              -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!--                       Footer                                   -->
-            <!-- ============================================================== -->
-            <th:block th:insert="fragments/general::footer"/>
-            <!-- ============================================================== -->
-            <!--                       End Footer                               -->
-            <!-- ============================================================== -->
+            </aside>
         </div>
-        <!-- ============================================================== -->
-        <!--                      End Main panel                            -->
-        <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!--                       End dashbaord Wrapper                    -->
-    <!-- ============================================================== -->
-
-    <script th:inline="javascript">
-        /*<![CDATA[*/
-        var actionPlanActiveOption = [[${actionPlanActiveOption}]];
-        var actionPlanComponents = [[${actionPlanComponents}]];
-        var tree = [
-            {
-                name: ''+actionPlanActiveOption,
-                children: [
-                    {
-                        name: ''+ actionPlanComponents[0],
-                        children:[
-                            {
-                                name: 'subdnode 1'
-
-                            },
-                            {
-                                name:'subnode 2'
-                            },
-                            {
-                                name: 'subnode 3'
-                            }
-                        ]
-                    },
-                    {
-                        name: ''+ actionPlanComponents[1],
-                        children:[
-                            {
-                                name: 'subdnode 1'
-
-                            },
-                            {
-                                name:'subnode 2'
-                            },
-                            {
-                                name: 'subnode 3'
-                            }
-                        ]
-                    },
-                    {
-                        name: ''+ actionPlanComponents[2],
-                        children:[
-                            {
-                                name: 'subdnode 1'
-
-                            },
-                            {
-                                name:'subnode 2'
-                            },
-                            {
-                                name: 'subnode 3'
-                            }
-                        ]
-                    }
-
-                ]
-            }
-
-        ];
-        /*]]>*/
-    </script>
+    <th:block th:insert="fragments/general::footer"/>
     <th:block th:insert="fragments/general::scripts"/>
 </body>
 </html>

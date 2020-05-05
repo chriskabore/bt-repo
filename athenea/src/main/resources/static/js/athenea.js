@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
     //tree widget
     (function(){
 
@@ -10,4 +10,4 @@ $(document).ready(function() {
             autoOpen: 1
         });
     })();
-});
+});*/

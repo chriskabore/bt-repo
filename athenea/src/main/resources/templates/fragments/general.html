@@ -7,9 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" type="text/css" th:href="@{/css/normalize.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{webjars/font-awesome/5.13.0/css/all.min.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{webjars/animate.css/animate.min.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{css/animate.css}"/>
         <link rel="stylesheet" type="text/css" th:href="@{/fontawsome-pro/css/all.css}"/>
         <link rel="stylesheet" type="text/css" th:href="@{/css/jqtree.css}"/>
         <link rel="stylesheet" type="text/css" th:href="@{/css/athenea.css}"/>
@@ -131,154 +130,163 @@
     </nav>
 </th:block>
 
+<!-- Aside -->
+<th:block th:fragment="sidebar">
+
+</th:block>
 <!-- Dashboard header -->
 <th:block th:fragment="dashboard-header">
-    <header>
+    <header class="header row navbar navbar-light navbar-expand-md">
         <!-- ======================== Navigation ================================= -->
-        <nav class="nav navbar navbar-expand-lg">
-            <div class="container-fluid px-4">
-                <!-- ====================== Panel Title =============================== -->
-                <div class="navbar-header">
-                    <a href="#" class="navbar-brand">
-                        <strong class="panel-title" th:text="#{ui.page.dashboard.title}">Dashboard</strong>
-                    </a>
-                </div>
-                <!-- ========================= End Panel Title =========================== -->
-                <!-- =========================== Navbar toggle button===================== -->
-                <a id="toggle-btn" href="#" class="menu-btn d-xl-none d-lg-none d-md-none" data-toggle="collapse" data-target="#side-menu">
-                    <i class="fa fa-bars fa-lg"></i>
-                </a>
-                <!-- =========================== End Navbar toggle button================= -->
-                <!-- =========================== Notifications section ======================= -->
-                <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                        <!-- Notifications block -->
-                        <li class="nav-item dropdown">
-                            <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">
-                                <i class="fa fa-bell fa-lg"></i>
-                                <!--/*@thymesVar id="notifications" type=""*/-->
-                                <span class="badge badge-warning" th:text="${numberOfNotifications}">0</span>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="notifications">
-                                <li>
-                                    <a class="dropdown-item">
-                                        <div class="notification d-flex justify-content-between">
-                                            <p>notification 1</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item">
-                                        <div class="notification d-flex justify-content-between">
-                                            <p>notification 1</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item">
-                                        <div class="notification d-flex justify-content-between">
-                                            <p>notification 1</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a rel="nofollow" href="#" class="dropdown-item all-notifications text-center">
-                                        <strong>
-                                            <i class="fa fa-bell"></i>view all notifications
-                                        </strong>
-                                    </a>
-                                </li>
+        <nav class="nav navbar navbar-expand-md w-100">
+            <div class="container-fluid">
+                <div class="navbar-wrapper w-100">
+                    <!-- ====================== Panel Title =============================== -->
 
-                            </ul>
-                        </li>
-                        <!-- Messages block -->
-                        <li class="nav-item dropdown">
-                            <a id="messages-notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
-                                <i class="fa fa-envelope"></i>
-                                <span class="badge badge-info" th:text="${numberOfMessages}">0</span>
-                            </a>
-                            <ul aria-labelledby="notifications" class="dropdown-menu">
-                                <li>
-                                    <a rel="nofollow" href="#" class="dropdown-item d-flex">
-                                        <div class="msg-profile mr-3">
-                                            <!--<img src="" alt="admin" class="img-fluid rounded-circle">-->
-                                            <i class="fas fa-user fa-lg fa-fw"></i>
-                                        </div>
-                                        <div class="msg-body">
-                                            <h3 class="h5">Felix Yameogo</h3>
-                                            <span th:text="#{ui.dashboard.header.message.notification.sent.direct.message.text}">sent you a direct message</span>
-                                            <small>3 days ago at 7:58 pm - 10.06.2014</small>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a rel="nofollow" href="#" class="dropdown-item d-flex">
-                                        <div class="msg-profile mr-3">
-                                            <!--<img src="" alt="admin" class="img-fluid rounded-circle">-->
-                                            <i class="fas fa-user fa-lg fa-fw"></i>
-                                        </div>
-                                        <div class="msg-body">
-                                            <h3 class="h5">Lassina Sana</h3>
-                                            <span th:text="#{ui.dashboard.header.message.notification.sent.direct.message.text}">sent you a direct message</span>
-                                            <small>3 days ago at 7:58 pm - 10.06.2014</small>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a rel="nofollow" href="#" class="dropdown-item all-notifications text-center">
-                                        <strong> <i class="fa fa-envelope fa-lg fa-fw mr-2"></i>Read all messages</strong>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- Language selector block -->
-                        <li class="nav-item dropdown">
-                            <a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle">
-                                <img src="img/flags/GB.png" alt="English">
-                                <span class="d-none d-sm-inline-block">English</span>
-                            </a>
-                            <ul aria-labelledby="languages" class="dropdown-menu">
-                                <li>
-                                    <a rel="nofollow" href="#" class="dropdown-item">
-                                        <img src="img/flags/FR.png" alt="French" class="mr-2">
-                                        <span>French</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- Logout section -->
-                        <li class="nav-item">
-                            <a href="#" class="nav-link logout">
-                                <span class="d-none d-sm-inline-block" th:text="#{ui.page.dashboar.header.nav.logout.text}">Logout</span>
-                                <i class="fa fa-sign-out"></i>
-                            </a>
-                        </li>
-                    </ul>
-                <!-- =========================== End Notifications section =================== -->
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-brand">
+                            <strong class="panel-title" th:text="#{ui.page.dashboard.title}">Dashboard</strong>
+                        </a>
+                    </div>
+
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false"
+                            aria-label="Toggle-navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="toggler-icon"><i class="fas fa-bars"></i></span>
+                    </button>
+                    <!-- =========================== Notifications section ======================= -->
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                            <!-- Notifications block -->
+                            <li class="nav-item dropdown">
+                                <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    <i class="fa fa-bell fa-lg"></i>
+                                    <!--/*@thymesVar id="notifications" type=""*/-->
+                                    <span class="badge badge-warning" th:text="${numberOfNotifications}">0</span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="notifications">
+                                    <li>
+                                        <a class="dropdown-item">
+                                            <div class="notification d-flex justify-content-between">
+                                                <p>notification 1</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item">
+                                            <div class="notification d-flex justify-content-between">
+                                                <p>notification 1</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item">
+                                            <div class="notification d-flex justify-content-between">
+                                                <p>notification 1</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item all-notifications text-center">
+                                            <strong>
+                                                <i class="fa fa-bell"></i>view all notifications
+                                            </strong>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <!-- Messages block -->
+                            <li class="nav-item dropdown">
+                                <a id="messages-notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
+                                    <i class="fa fa-envelope"></i>
+                                    <span class="badge badge-info" th:text="${numberOfMessages}">0</span>
+                                </a>
+                                <ul aria-labelledby="notifications" class="dropdown-menu">
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                            <div class="msg-profile mr-3">
+                                                <!--<img src="" alt="admin" class="img-fluid rounded-circle">-->
+                                                <i class="fas fa-user fa-lg fa-fw"></i>
+                                            </div>
+                                            <div class="msg-body">
+                                                <h3 class="h5">Felix Yameogo</h3>
+                                                <span th:text="#{ui.dashboard.header.message.notification.sent.direct.message.text}">sent you a direct message</span>
+                                                <small>3 days ago at 7:58 pm - 10.06.2014</small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                            <div class="msg-profile mr-3">
+                                                <!--<img src="" alt="admin" class="img-fluid rounded-circle">-->
+                                                <i class="fas fa-user fa-lg fa-fw"></i>
+                                            </div>
+                                            <div class="msg-body">
+                                                <h3 class="h5">Lassina Sana</h3>
+                                                <span th:text="#{ui.dashboard.header.message.notification.sent.direct.message.text}">sent you a direct message</span>
+                                                <small>3 days ago at 7:58 pm - 10.06.2014</small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item all-notifications text-center">
+                                            <strong> <i class="fa fa-envelope fa-lg fa-fw mr-2"></i>Read all messages</strong>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Language selector block -->
+                            <li class="nav-item dropdown">
+                                <a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle">
+                                    <img src="img/flags/GB.png" alt="English">
+                                    <span class="d-none d-sm-inline-block">English</span>
+                                </a>
+                                <ul aria-labelledby="languages" class="dropdown-menu">
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item">
+                                            <img src="img/flags/FR.png" alt="French" class="mr-2">
+                                            <span>French</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Logout section -->
+                            <li class="nav-item">
+                                <a href="#" class="nav-link logout">
+                                    <span class="d-none d-sm-inline-block" th:text="#{ui.page.dashboar.header.nav.logout.text}">Logout</span>
+                                    <i class="fa fa-sign-out"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- =========================== End Notifications section =================== -->
+
+                </div>
             </div>
         </nav>
         <!-- ====================== End Navigation =================================== -->
+
     </header>
 </th:block>
 <!-- Footer -->
 <th:block th:fragment="footer">
     <hr class="footer-separator">
     <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-6 offset-sm-6">
-                    <p class="copyright float-right" th:text="'&copy; '+${year}+'&nbsp;'+#{ui.footer.copyright.text}">&copy; &nbsp;Copyright BEOGOTECH SARL. All rights reserved.</p>
-                </div>
+            <div class="col-12 my-auto">
+                <p class="copyright float-md-right text-center my-auto" th:text="'&copy; '+${year}+'&nbsp;'+#{ui.footer.copyright.text}">&copy; &nbsp;Copyright BEOGOTECH SARL. All rights reserved.</p>
             </div>
-        </div>
     </footer>
 
     <!-- Scripts -->
 </th:block>
     <th:block th:fragment="scripts">
-        <script type="text/javascript" th:src="@{/webjars/jquery/3.0.0/jquery.min.js/}"></script>
+        <script type="text/javascript" th:src="@{/js/modernizr-3.8.0.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/jquery-3.4.1.min.js}"></script>
         <script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
-        <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
         <script type="text/javascript" th:src="@{/fontawsome-pro/js/all.js}" ></script>
         <script type="text/javascript" th:src="@{/js/tree.jquery.js}"></script>
         <script type="text/javascript" th:src="@{/js/athenea.js}"></script>

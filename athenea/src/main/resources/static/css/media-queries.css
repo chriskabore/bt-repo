@@ -1,241 +1,36 @@
-
-
-
 /* Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
-    body{
-        width:100%;
+    footer{
+        font-size: 0.7rem;
     }
-    .login-card, .login-logo-container{
-        width:18.5rem;
-    }
-
-    .content-wrapper{
-        width:20.5rem;
-    }
-
-    footer .copyright{
-        font-size: 0.66rem;
-    }
-
-    .password-forgoten  a{
-        padding-left: 0px;
-    }
-
-    .sidebar{
-        position: fixed;
-        display: block;
-        top: 0;
-        height: 100vh;
-        width: 16.25rem;
-        right: 0;
-        left: auto;
-        z-index: 1032;
-        visibility: visible;
-        overflow-y: visible;
-        border-top: none;
-        text-align: left;
-        padding-right: 0;
-        padding-left: 0;
-        transform: translate3d(260px,0,0);
-        transition: all .33s cubic-bezier(.685,.0473,.346,1);
-    }
-
-    .menu-list{
-        position: relative;
-        overflow: auto;
-        z-index: 4;
-    }
-
-    .collapse.show{
-        transform: translateZ(0px);
-        margin-top: 3.8rem;
-        border-right: none;
-        height: calc(100vh - 65.59px);
-    }
-
-    .sidebar-header{
-        display: none;
-
-    }
-    .main-panel{
-        width:100%;
-    }
-    #toggle-btn{
-        color:#fff;
-    }
-    .navbar-header{
-        display: none;
-    }
-
-    .action-plan-selector{
-        border: 1px solid #ceeeef;
-        background: #fff;
-        width: 100%;
-    }
-
 }
 
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767.98px) {
-    body{
-      width:100%;
-    }
-    .login-card, .content-wrapper, .login-logo-container{
-        width:32rem;
-    }
-    footer .copyright{
-        font-size: 0.65rem;
-    }
-    .phrase-container .phrase{
-        font-size: 0.8rem;
-    }
-
-    .password-forgoten  a{
-        padding-left: 0px;
-    }
-    .sidebar{
-        position: fixed;
-        display: block;
-        top: 0;
-        height: 100vh;
-        width: 16.25rem;
-        right: 0;
-        left: auto;
-        z-index: 1032;
-        visibility: visible;
-        overflow-y: visible;
-        border-top: none;
-        text-align: left;
-        padding-right: 0;
-        padding-left: 0;
-        transform: translate3d(260px,0,0);
-        transition: all .33s cubic-bezier(.685,.0473,.346,1);
-    }
-
-    .collapse.show{
-        transform: translateZ(0px);
-        margin-top: 3.8rem;
-        border-right: none;
-        height: calc(100vh - 65.59px);
-    }
-    .menu-list{
-        position: relative;
-        overflow: auto;
-        z-index: 4;
-    }
-    .sidebar-header{
-        display: none;
-    }
-    .main-panel{
-        width:100%;
-    }
-
-    #toggle-btn{
-        color:#fff;
-    }
-
-    .navbar-header{
-        display: none;
-    }
-
-    .action-plan-selector{
-        border: 1px solid #ceeeef;
-        background: #fff;
-        width: 100%;
+    footer{
+        font-size: 0.85rem;
     }
 }
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 991.98px) {
-    body{
-        width: 100%;
-    }
-    .content-wrapper{
-        min-height: 100vh;
-    }
-
-    .password-forgoten  a{
-        padding-left: 3.5rem;
-    }
-    .sidebar{
-        display: block!important;
-    }
-    footer .copyright{
-        font-size: 0.55rem;
-    }
-    #toggle-btn{
-        color:#fff;
-    }
-    .action-plan-selector{
-        border: 1px solid #ceeeef;
-        background: #fff;
-        width: 100%;
-    }
-
-    .selector-label {
+    footer{
         font-size: 1.05rem;
     }
-
 }
 
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    body{
-        width: 100%;
+    footer{
+        font-size: 1.3rem;
     }
 
-    .content-wrapper{
-        min-height: 100vh;
-    }
-
-    .login-card, .content-wrapper{
-        width: 50rem;
-    }
-
-    .password-forgoten  a{
-        padding-left: 5rem;
-    }
-
-    .navbar-expand-lg{
-
-    }
-
-    .sidebar{
-        display: block!important;
-    }
-
-    .action-plan-selector{
-        border: 1px solid #ceeeef;
-        background: #fff;
-        width: 100%;
-    }
-
-    .selector-label {
-        font-size: 1.05rem;
-    }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-    body{
-        width: 100%;
+    footer{
+        font-size: 1.3rem;
     }
 
-    .content-wrapper{
-        min-height: 100vh;
-    }
-    .login-card, .content-wrapper{
-        width: 50rem;
-    }
-
-    .sidebar{
-        display: block!important;
-    }
-
-    .action-plan-selector{
-        border: 1px solid #ceeeef;
-        background: #fff;
-        width: 100%;
-    }
 }
