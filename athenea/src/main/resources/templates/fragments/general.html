@@ -169,28 +169,31 @@
                                     <li>
                                         <a class="dropdown-item">
                                             <div class="notification d-flex justify-content-between">
-                                                <p>notification 1</p>
+                                                <div class="notification-content">Felix Yameogo updated an activity</div>
+                                                <div class="notification-time"> <small>3 minutes ago</small></div>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item">
                                             <div class="notification d-flex justify-content-between">
-                                                <p>notification 1</p>
+                                                <div class="notification-content">Felix Yameogo updated an activity</div>
+                                                <div class="notification-time"> <small>3 minutes ago</small></div>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item">
                                             <div class="notification d-flex justify-content-between">
-                                                <p>notification 1</p>
+                                                <div class="notification-content">Felix Yameogo updated an activity</div>
+                                                <div class="notification-time"> <small>3 minutes ago</small></div>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
                                         <a rel="nofollow" href="#" class="dropdown-item all-notifications text-center">
                                             <strong>
-                                                <i class="fa fa-bell"></i>view all notifications
+                                                <i class="fa fa-bell all-notifications-icon"></i>view all notifications
                                             </strong>
                                         </a>
                                     </li>
@@ -213,7 +216,7 @@
                                             <div class="msg-body">
                                                 <h3 class="h5">Felix Yameogo</h3>
                                                 <span th:text="#{ui.dashboard.header.message.notification.sent.direct.message.text}">sent you a direct message</span>
-                                                <small>3 days ago at 7:58 pm - 10.06.2014</small>
+                                                <small>3 days ago at 7:58 pm - 05-05-2020</small>
                                             </div>
                                         </a>
                                     </li>
@@ -226,7 +229,7 @@
                                             <div class="msg-body">
                                                 <h3 class="h5">Lassina Sana</h3>
                                                 <span th:text="#{ui.dashboard.header.message.notification.sent.direct.message.text}">sent you a direct message</span>
-                                                <small>3 days ago at 7:58 pm - 10.06.2014</small>
+                                                <small>3 days ago at 7:58 pm - 05-05-2020</small>
                                             </div>
                                         </a>
                                     </li>
@@ -254,7 +257,7 @@
                             </li>
                             <!-- Logout section -->
                             <li class="nav-item">
-                                <a href="#" class="nav-link logout">
+                                <a href="/login" th:href="@{/login}" class="nav-link logout">
                                     <span class="d-none d-sm-inline-block" th:text="#{ui.page.dashboar.header.nav.logout.text}">Logout</span>
                                     <i class="fa fa-sign-out"></i>
                                 </a>

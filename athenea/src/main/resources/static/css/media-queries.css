@@ -3,6 +3,9 @@
     footer{
         font-size: 0.7rem;
     }
+    .phrase-container .phrase{
+        font-size: 0.85rem;;
+    }
 }
 
 /* Small devices (landscape phones, 576px and up)*/
@@ -10,6 +13,11 @@
     footer{
         font-size: 0.85rem;
     }
+
+    .phrase-container .phrase{
+        font-size: .7rem;
+    }
+
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -17,20 +25,44 @@
     footer{
         font-size: 1.05rem;
     }
+
+    .phrase-container .phrase{
+        font-size: 0.9rem;;
+    }
 }
 
 /* Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) and (max-width: 1199.98px) {
+@media (min-width: 992px) and (max-width: 1023.98px) {
     footer{
         font-size: 1.3rem;
     }
 
+    .phrase-container .phrase{
+        font-size: 1.2rem;;
+    }
+
 }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 1024px) and (max-width: 1199.98px) {
+    footer{
+        font-size: 1.3rem;
+    }
+
+    .phrase-container .phrase{
+        font-size: 1.25rem;;
+    }
+
+}
+
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
     footer{
         font-size: 1.3rem;
+    }
+    .phrase-container .phrase{
+        font-size: 1.25rem;;
     }
 
 }

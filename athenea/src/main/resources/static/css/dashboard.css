@@ -17,7 +17,9 @@
 /*----------------------
   Navbar
 -----------------------*/
-
+.notification{
+    align-items: center;
+}
 #notifications.nav-link .fa-bell{
     color: white;
     font-size: 0.9rem;
@@ -40,6 +42,20 @@
     white-space: nowrap;
     vertical-align: baseline;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.notification-content{
+    font-size: .8rem;
+    margin-right: .5rem;
+}
+
+.notification-time small{
+    font-size: 0.75rem;
+    color: #999;
+}
+
+.all-notifications .all-notifications-icon{
+    margin-right:0.625rem;
 }
 
 #messages-notifications.nav-link .fa-envelope{
@@ -82,7 +98,7 @@
     padding-top: 0;
     padding-bottom: 0;
     font-size: 1rem;
-    padding: 1rem;
+    padding: 0 1rem;
 }
 
 .dropdown-menu .dropdown-item{
