@@ -6,111 +6,14 @@
     <title th:text="#{ui.page.dashboard.title}">Dashboard</title>
 </head>
 <body>
-    <div class="container-fluid wrapper">
-       <th:block th:insert="fragments/general::dashboard-header"/>
-        <div class="page row">
-            <aside class="navbar navbar-expand-md">
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav nav flex-column">
-                        <li class="first-list-item nav-item active">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-analytics fa-fw fa-lg"></i>
-                                <span class="menu-text">Dashbaord</span>
-                            </a>
-                        </li>
-
-                        <li  data-toggle="collapse" data-target="#activities" class="collapsed nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-tasks fa-fw fa-lg"></i>
-                                <span class="menu-text activities">Activities</span>
-                                <span class="arrow"></span>
-                            </a>
-                        </li>
-                        <ul class="sub-menu collapse" id="activities">
-                            <li class="active"><a href="#">CSS3 Animation</a></li>
-                            <li><a href="#">General</a></li>
-                            <li><a href="#">Buttons</a></li>
-                            <li><a href="#">Tabs & Accordions</a></li>
-                        </ul>
-
-
-                        <li data-toggle="collapse" data-target="#budgets" class="collapsed nav-item">
-                            <a href="# " class="nav-link">
-                                <i class="fas fa-money-bill-alt fa-fw fa-lg"></i>
-                                <span class="menu-text">Budgets</span>
-                                <span class="arrow"></span>
-                            </a>
-                        </li>
-                        <ul class="sub-menu collapse" id="budgets">
-                            <li>New Service 1</li>
-                            <li>New Service 2</li>
-                            <li>New Service 3</li>
-                        </ul>
-
-
-                        <li data-toggle="collapse" data-target="#orders" class="collapsed nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-receipt  fa-fw fa-lg"></i>
-                                <span class="menu-text">Orders</span>
-                                <span class="arrow"></span>
-                            </a>
-                        </li>
-                        <ul class="sub-menu collapse" id="orders">
-                            <li>New New 1</li>
-                            <li>New New 2</li>
-                            <li>New New 3</li>
-                        </ul>
-
-
-                        <li data-toggle="collapse" data-target="#stakeholders" class="collapsed nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-hands-helping fa-fw fa-lg"></i>
-                                <span class="menu-text">Stakeholders</span>
-                                <span class="arrow"></span>
-                            </a>
-                        </li>
-                        <ul class="sub-menu collapse" id="stakeholders">
-                            <li>New New 1</li>
-                            <li>New New 2</li>
-                            <li>New New 3</li>
-                        </ul>
-
-                        <li data-toggle="collapse" data-target="#indicators" class="collapsed nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-tachometer-alt fa-fw fa-lg"></i>
-                                <span class="menu-text">Indicators</span>
-                                <span class="arrow"></span>
-                            </a>
-                        </li>
-                        <ul class="sub-menu collapse" id="indicators">
-                            <li>New New 1</li>
-                            <li>New New 2</li>
-                            <li>New New 3</li>
-                        </ul>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-bell fa-fw fa-lg"></i>
-                                <span class="menu-text">Notifications</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-question-circle fa-fw fa-lg"></i>
-                                <span class="menu-text">Help</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fa fa-cog fa-fw fa-lg"></i>
-                                <span class="menu-text">Settings</span>
-                            </a>
-                        </li>
-                    </ul>
+    <div class="page dashboard-page">
+        <div class="container-fluid wrapper">
+            <th:block th:insert="fragments/general::dashboard-header"/>
+            <div class="content row">
+                <div class="col-md-2 sidebar-column">
+                    <th:block th:insert="fragments/general::sidebar"/>
                 </div>
-            </aside>
+            </div>
         </div>
     </div>
     <th:block th:insert="fragments/general::footer"/>

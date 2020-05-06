@@ -18,26 +18,23 @@
     <title>Title</title>
 </head>
 <body>
-<!-- Side menu -->
-<th:block th:fragment="side-menu">
-    <nav id="side-menu" class="sidebar navbar-expand-lg">
-        <div class="sidebar-header">
-            <div class="brand">
-                <img th:src="@{/img/logo-athenea.png}" alt="athenea logo" class="aside-logo-image"/>
-            </div>
-        </div>
-        <div class="menu-list">
-            <ul id="menu-content" class="menu-content">
+
+<!-- Aside -->
+<th:block th:fragment="sidebar">
+    <aside class="navbar navbar-expand-md">
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav nav flex-column">
                 <li class="first-list-item nav-item active">
-                    <a href="/dashboard" th:href="@{/dashboard}" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="fas fa-analytics fa-fw fa-lg"></i>
-                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.dashboard}" >Dashbaord</span>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.dashboard}">Dashbaord</span>
                     </a>
                 </li>
+
                 <li  data-toggle="collapse" data-target="#activities" class="collapsed nav-item">
                     <a href="#" class="nav-link">
                         <i class="fas fa-tasks fa-fw fa-lg"></i>
-                        <span class="menu-text activities" th:text="#{ui.dashboard.menu.item.text.activities}" >Activities</span>
+                        <span class="menu-text activities" th:text="#{ui.dashboard.menu.item.text.activities}">Activities</span>
                         <span class="arrow"></span>
                     </a>
                 </li>
@@ -47,10 +44,12 @@
                     <li><a href="#">Buttons</a></li>
                     <li><a href="#">Tabs & Accordions</a></li>
                 </ul>
+
+
                 <li data-toggle="collapse" data-target="#budgets" class="collapsed nav-item">
                     <a href="# " class="nav-link">
                         <i class="fas fa-money-bill-alt fa-fw fa-lg"></i>
-                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.budgets}" >Budgets</span>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.budgets}">Budgets</span>
                         <span class="arrow"></span>
                     </a>
                 </li>
@@ -59,10 +58,12 @@
                     <li>New Service 2</li>
                     <li>New Service 3</li>
                 </ul>
+
+
                 <li data-toggle="collapse" data-target="#orders" class="collapsed nav-item">
                     <a href="#" class="nav-link">
                         <i class="fas fa-receipt  fa-fw fa-lg"></i>
-                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.orders}" >Orders</span>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.orders}">Orders</span>
                         <span class="arrow"></span>
                     </a>
                 </li>
@@ -71,10 +72,12 @@
                     <li>New New 2</li>
                     <li>New New 3</li>
                 </ul>
+
+
                 <li data-toggle="collapse" data-target="#stakeholders" class="collapsed nav-item">
                     <a href="#" class="nav-link">
                         <i class="fas fa-hands-helping fa-fw fa-lg"></i>
-                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.stakeholders}" >Stakeholders</span>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.stakeholders}">Stakeholders</span>
                         <span class="arrow"></span>
                     </a>
                 </li>
@@ -83,10 +86,11 @@
                     <li>New New 2</li>
                     <li>New New 3</li>
                 </ul>
+
                 <li data-toggle="collapse" data-target="#indicators" class="collapsed nav-item">
                     <a href="#" class="nav-link">
                         <i class="fas fa-tachometer-alt fa-fw fa-lg"></i>
-                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.indicators}" >Indicators</span>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.indicators}">Indicators</span>
                         <span class="arrow"></span>
                     </a>
                 </li>
@@ -110,29 +114,26 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="fas fa-bell fa-fw fa-lg"></i>
-                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.notifications}" >Notifications</span>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.notifications}">Notifications</span>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="fas fa-question-circle fa-fw fa-lg"></i>
-                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.help}" >Help</span>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.help}">Help</span>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="fa fa-cog fa-fw fa-lg"></i>
-                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.settings}" >Settings</span>
+                        <span class="menu-text" th:text="#{ui.dashboard.menu.item.text.settings}">Settings</span>
                     </a>
                 </li>
             </ul>
         </div>
-    </nav>
-</th:block>
-
-<!-- Aside -->
-<th:block th:fragment="sidebar">
-
+    </aside>
 </th:block>
 <!-- Dashboard header -->
 <th:block th:fragment="dashboard-header">
@@ -145,7 +146,7 @@
 
                     <div class="navbar-header">
                         <a href="#" class="navbar-brand">
-                            <strong class="panel-title" th:text="#{ui.page.dashboard.title}">Dashboard</strong>
+                            <img th:src="@{/img/logo-athenea.png}" alt="athenea logo" class="brand-logo-image img-fluid"/>
                         </a>
                     </div>
 
