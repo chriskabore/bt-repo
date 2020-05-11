@@ -25,6 +25,7 @@
     padding-left: 0;
     padding-right: 0;
 }
+
 aside.navbar{
     background-color: #43425D;
     padding-left: 0;
@@ -32,6 +33,8 @@ aside.navbar{
     padding-right: 0;
     padding-bottom: 0;
     padding-top: 0;
+    height: 100%;
+    max-width: 100%;
 }
 
 aside .nav-link{
