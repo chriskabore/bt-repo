@@ -13,10 +13,111 @@
                 <div class="col-md-2 sidebar-column">
                     <th:block th:insert="fragments/general::sidebar"/>
                 </div>
+                <div class="col-md-10 panel-column">
+                    <div class="form-row action-plan-selector-row align-items-baseline mt-2">
+                        <div class="col-md-4">
+                            <label class="selector-label" th:text="#{ui.dashboard.content.selector.label.text}">Choose an action plan</label>
+                        </div>
+                        <div class="col-md-8">
+                            <select name="action-plan-selector" class="action-plan-selector form-control">
+                                <option th:text="${actionPlanActiveOption}"></option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <section class="row action-plan-panel">
+                        <div class="container-fluid">
+                            <div class="row d-flex">
+                                <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="card action-plan-tree-holder mt-3 mb-2 pl-2 pr-2 pt-2 pb-2">
+                                        <div id="action-plan-tree">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="card action-plan-synthesis-holder mt-3 mb-2 px-2 py-2">
+                                        <h5 class="action-plan-synthesis-text" th:text="#{ui.dashboard.content.action.plan.synthesis.text}">Synthesis</h5>
+                                        <div class="container-fluid">
+                                            <div class="row d-flex">
+
+                                            </div>
+                                            <div class="row d-flex">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
     <th:block th:insert="fragments/general::footer"/>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var actionPlanActiveOption = [[${actionPlanActiveOption}]];
+        var actionPlanComponents = [[${actionPlanComponents}]];
+        var tree = [
+            {
+                name: ''+actionPlanActiveOption,
+                children: [
+                    {
+                        name: ''+ actionPlanComponents[0],
+                        children:[
+                            {
+                                name: 'subdnode 1'
+
+                            },
+                            {
+                                name:'subnode 2'
+                            },
+                            {
+                                name: 'subnode 3'
+                            }
+                        ]
+                    },
+                    {
+                        name: ''+ actionPlanComponents[1],
+                        children:[
+                            {
+                                name: 'subdnode 1'
+
+                            },
+                            {
+                                name:'subnode 2'
+                            },
+                            {
+                                name: 'subnode 3'
+                            }
+                        ]
+                    },
+                    {
+                        name: ''+ actionPlanComponents[2],
+                        children:[
+                            {
+                                name: 'subdnode 1'
+
+                            },
+                            {
+                                name:'subnode 2'
+                            },
+                            {
+                                name: 'subnode 3'
+                            }
+                        ]
+                    }
+
+                ]
+            }
+
+        ];
+        /*]]>*/
+    </script>
     <th:block th:insert="fragments/general::scripts"/>
 </body>
 </html>

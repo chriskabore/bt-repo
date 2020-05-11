@@ -1,6 +1,6 @@
 $(document).ready(function() {
     //tree widget
-   /* (function(){
+    (function(){
 
         var data = tree;
         $('#action-plan-tree').tree({
@@ -9,15 +9,24 @@ $(document).ready(function() {
             autoEscape: false,
             autoOpen: 1
         });
-    })();*/
+    })();
 
    // active menu item
     $('.menu-item').click(function (e) {
+
         if(!$(this).hasClass('active')){
             $('.menu-item').not(this).filter('.active').removeClass('active');
+            $('.menu-item').not(this).addClass('collapsed');
             $(this).addClass('active');
         }
-        $('.menu-item').not(this).children('.sub-menu.collapse.show').removeClass('show');
+
+        if($(this).find('ul.sub-menu').length>0){
+            $('[aria-expanded="true"]').not(this).attr('aria-expanded','false');
+            $('.menu-item').not(this).children('.sub-menu.collapse.show').removeClass( "show", 400);
+        }else{
+            $('.menu-item').not(this).children('.sub-menu.collapse.show').removeClass( "show", 100);
+        }
+
     });
 
     // active sub-menu item
