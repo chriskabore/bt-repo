@@ -25,7 +25,10 @@
     padding-left: 0;
     padding-right: 0;
 }
-
+#navbar{
+    position: relative;
+    top:-2.8rem;
+}
 aside.navbar{
     background-color: #43425D;
     padding-left: 0;
@@ -311,7 +314,7 @@ aside .nav-link{
 
 .card.action-plan-synthesis-holder,
 .card.action-plan-tree-holder{
-    height:25rem;
+    height:34rem;
 }
 
 h5.action-plan-synthesis-text{
@@ -324,62 +327,77 @@ h5.action-plan-synthesis-text{
 /******** tree view ***/
 
 #action-plan-tree{
-    overflow: auto;
+    overflow-y: auto;
     font-size: 0.85rem;
     font-weight: 300;
 }
-#action-plan-tree ul,
-#action-plan-tree ul ul {
+
+div#action-plan-tree .jqtree_common {
+    position: relative;
+}
+
+div#action-plan-tree ul li{
     margin: 0;
-    padding: 0;
-}
-
-#action-plan-tree ul ul{
-    margin-left: 0.4rem;
-}
-
-#action-plan-tree ul li{
+    padding-left: 20px;
     line-height: 2rem;
-    padding-left: 1rem;
-    border-left:1px solid rgb(100,100,100);
+    position: relative;
+}
+div#action-plan-tree ul li::before, div#action-plan-tree ul li::after {
+    content: '';
+    position: absolute;
+    left: 0;
 }
 
-#action-plan-tree ul li:last-child{
-    border-left:none;
+/* horizontal line on inner list items */
+div#action-plan-tree ul li::before {
+    border-top: 1px solid #999;
+    top: 18px;
+    width: 20px;
+    margin-left: -5px;
 }
 
-#action-plan-tree ul li:before{
-    position:relative;
-    top:0;
-    height:1em;
-    width:1.2rem;
-    color:white;
-    border-bottom:1px solid rgb(100,100,100);
-    content:"";
-    display:inline-block;
-    left:-7px;
+
+
+/* vertical line on list items */
+div#action-plan-tree ul li::after {
+    border-left: 1px solid #333;
+    height: 100%;
+    top: -15px;
+    margin-left:-6px;
 }
 
-#action-plan-tree ul li:last-child:before {
-    border-left:1px solid rgb(100,100,100);
+div#action-plan-tree>ul>li::before {
+    border-top: none;
 }
 
-#action-plan-tree .jqtree-element.jqtree_common {
-    top: -1.1rem;
+ul.jqtree-tree li.jqtree-selected > .jqtree-element,
+ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover,
+#action-plan-tree .jqtree-element.active
+{
+    background-color: #9160A6;
+    background: -webkit-gradient(linear, left top, left bottom, from(#9160A6), to(#925EA8));
+    color: white;
+    text-shadow: none;
+    border-radius: .2rem;
 }
 
-#action-plan-tree .jqtree_common.jqtree-folder > .jqtree-element.jqtree_common {
-    top: 0;
-}
 
-#action-plan-tree .jqtree_common.jqtree-folder:before{
+
+.jqtree-element .action-plan-element-controls{
     display: none;
 }
-
-#action-plan-tree ul li:last-child:before {
-    border-left:1px solid rgb(100,100,100);
+.jqtree-element .action-plan-element-controls a{
+    color:#fff;
 }
 
-#action-plan-tree ul.jqtree-tree .jqtree-toggler {
-    margin-right: 1.25em;
+ul.jqtree-tree li.jqtree-selected > .jqtree-element > .jqtree-title,
+ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover > .jqtree-title,
+#action-plan-tree .jqtree-element.active:hover > .jqtree-title,
+#action-plan-tree .jqtree-element.active > .jqtree-title{
+    color:#fff;
 }
+
+#action-plan-tree .jqtree-element:hover > .jqtree-title{
+    color:#9160A6;
+}
+

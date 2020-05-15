@@ -7,7 +7,23 @@ $(document).ready(function() {
             data: data,
             dragAndDrop: true,
             autoEscape: false,
-            autoOpen: 1
+            autoOpen: 1,
+            onCreateLi: function(node, $li){
+                <!-- Call to action buttons -->
+                $li.find('.jqtree-element').append(
+                    '<div class="action-plan-element-controls d-none m-0">'+
+                            '<a class="btn btn-sm rounded-0" href="#" data-toggle="tooltip" data-placement="top" title="View">'+
+                                '<i class="fa fa-eye"></i>'+
+                            '</a>'+
+                            '<a class="btn  btn-sm rounded-0" href="#" data-toggle="tooltip" data-placement="top" title="Edit">'+
+                                '<i class="fa fa-edit"></i>'+
+                            '</a>'+
+                            '<a class="btn btn-sm rounded-0" href="#" data-toggle="tooltip" data-placement="top" title="Delete">'+
+                                '<i class="fa fa-trash"></i>'+
+                            '</a>'+
+                    '</div>'
+                );
+            }
         });
     })();
 
@@ -75,4 +91,31 @@ $(document).ready(function() {
             $("#login-submit").unbind('click').click();
         }
     });
+
+    $('#action-plan-tree li').click(function(e){
+         //e.stopImmediatePropagation();
+        $(this).addClass('active');
+        $('#action-plan-tree li').not(this).removeClass('active');
+    });
+
+    /*$('.jqtree-element').click(function(e){
+
+        if(!$(this).hasClass('active')){
+            $(this).addClass('active');
+        }
+    });*/
+
+   $('.jqtree-element').on('click',function(e){
+       if(!$(this).hasClass('active')){
+           $(this).addClass('active');
+       }
+       $(this).addClass('d-flex');
+       $('.jqtree-element').not(this).removeClass('active');
+       $(this).find('.action-plan-element-controls').removeClass('d-none');
+       $(this).find('.action-plan-element-controls').addClass('d-inline ml-auto');
+       $('.jqtree-element').not(this).find('.action-plan-element-controls').removeClass('d-inline ml-auto');
+       $('.jqtree-element').not(this).removeClass('d-flex');
+   });
+
+
 });

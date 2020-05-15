@@ -1794,13 +1794,13 @@ limitations under the License.
       }
     };
 
-    NodeElement.prototype.select = function() {
+    /*NodeElement.prototype.select = function() {
       return this.getLi().addClass('jqtree-selected');
     };
 
     NodeElement.prototype.deselect = function() {
       return this.getLi().removeClass('jqtree-selected');
-    };
+    };*/
 
     return NodeElement;
 
